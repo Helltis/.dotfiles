@@ -412,6 +412,7 @@ def init_widgets_list():
             margin=0,
             background=colors[14],
             foreground=colors[5],
+            configured_keyboards=['us', 'ru'],
         ),
 
         widget.TextBox(
