@@ -27,11 +27,13 @@ set encoding=UTF-8
 set mouse=a
 set splitbelow
 set splitright
-set cmdheight=1
+set cmdheight=0
 set shortmess+=c
 set nowrap
 set termguicolors
 set noshowmode
+set sidescroll=1
+" set guifont=FantasqueSansMono\ 12
 
 " ---------- PLUGINS ----------
 
@@ -41,24 +43,30 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'preservim/nerdtree' 
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'PhilRunninger/nerdtree-visual-selection'
+" Plug 'preservim/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'PhilRunninger/nerdtree-visual-selection'
 " Plug 'glepnir/dashboard-nvim'
 "----- vim airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'KarimElghamry/vim-auto-comment'
-Plug 'tanvirtin/monokai.nvim'
+" Plug 'tanvirtin/monokai.nvim'
 Plug 'windwp/nvim-autopairs'
 Plug 'alvan/vim-closetag'
+Plug 'folke/tokyonight.nvim'
+Plug 'nvim-neo-tree/neo-tree.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'MunifTanjim/nui.nvim'
+" Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
 
 call plug#end()
 
 " require plugin configs
+" lua require("neo-tree").paste_default_config()
 lua require('helltis')
 lua require'colorizer'.setup()
 filetype plugin on
@@ -66,7 +74,7 @@ command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 
 
 " ---------- COLORSCHEME ----------
-colorscheme monokai
+colorscheme tokyonight-moon
 
 " ---------- KEYBINDS ----------
 " Shif - Tab to switch tabs
@@ -74,11 +82,11 @@ nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :wri
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ CheckBackspace() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" inoremap <silent><expr> <TAB>
+"       \ pumvisible() ? "\<C-n>" :
+"       \ CheckBackspace() ? "\<TAB>" :
+"       \ coc#refresh()
+" inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! CheckBackspace() abort
   let col = col('.') - 1
@@ -110,15 +118,16 @@ function! ShowDocumentation()
 endfunction
 
 " ------ nerdtree -----
-nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+" nnoremap <C-n> :NERDTreeToggle<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
+ nnoremap <C-n> :Neotree toggle reveal<CR>
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " ----- airline settings -----
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='wombat'
+let g:airline_theme='base16'
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -135,11 +144,11 @@ let g:coc_global_extensions = [
 " ----- coc snippets settings -----
 "  Make <tab> used for trigger completion,
 "  completion confirm, snippet expand and jump like VSCode.
-" inoremap <silent><expr> <TAB>
-"       \ pumvisible() ? coc#_select_confirm() :
-"       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-"       \ <SID>check_back_space() ? "\<TAB>" :
-"       \ coc#refresh()
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 
 function! s:check_back_space() abort
   let col = col('.') - 1
@@ -164,3 +173,28 @@ let g:closetag_regions = {
     \ 'typescriptreact': 'jsxRegion,tsxRegion',
     \ 'javascriptreact': 'jsxRegion',
     \ }
+
+" let g:NERDTreeIndicatorMapCustom = {
+"     \ "Modified"  : "✹",
+"     \ "Staged"    : "✚",
+"     \ "Untracked" : "✭",
+"     \ "Renamed"   : "➜",
+"     \ "Unmerged"  : "═",
+"     \ "Deleted"   : "",
+"     \ "Dirty"     : "✗",
+"     \ "Clean"     : "✔︎",
+"     \ 'Ignored'   : '☒',
+"     \ "Unknown"   : "?"
+"     \ }
+
+" Search and replace word under cursor using F2
+nnoremap <F2> :%s/<c-r><c-w>/<c-r><c-w>/gc<c-f>$F/i
+
+" Switch between splits with ALT
+nmap <silent> <A-k> :wincmd k<CR>
+nmap <silent> <A-j> :wincmd j<CR>
+nmap <silent> <A-h> :wincmd h<CR>
+nmap <silent> <A-l> :wincmd l<CR>
+
+" Save on F5
+nnoremap <F5> :w<CR>

@@ -5,7 +5,7 @@ import subprocess
 from typing import List  # noqa: F401
 from libqtile import layout, bar, widget, hook, qtile
 from libqtile.config import Click, Drag, Group, Key, Match, Screen, Rule
-from libqtile.command import lazy
+from libqtile.lazy import lazy
 
 from libqtile.widget import Spacer
 
@@ -268,9 +268,9 @@ layouts = [
     # layout.MonadWide(margin=6, border_width=2, border_focus="#014421", border_normal="#f4c2c2"),
     # layout.Matrix(**layout_theme),
     # layout.Bsp(**layout_theme),
-    # layout.Floating(**layout_theme),
+    layout.Floating(**layout_theme),
     # layout.RatioTile(**layout_theme),
-    layout.Max(**layout_theme),
+    layout.Max(),
     # layout.Columns(**layout_theme),
     # layout.Stack(**layout_theme),
     # layout.Tile(**layout_theme),

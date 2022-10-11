@@ -1,5 +1,7 @@
 {
   "suggest.noselect": false,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "typescript",
@@ -9,5 +11,6 @@
     "typescript.tsx",
     "graphql"
   ],
-  "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"]
+  "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
+  "snippets.userSnippetsDirectory": "~/.config/nvim/snippets"
 }

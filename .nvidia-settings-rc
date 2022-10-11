@@ -2,7 +2,7 @@
 # /home/helltis/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA Settings utility
-# Generated on Sat Jul 30 20:31:41 2022
+# Generated on Thu Sep  1 15:33:43 2022
 #
 
 # ConfigProperties:
@@ -85,7 +85,7 @@ Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
 [DPY:DP-4]/Dithering=0
 [DPY:DP-4]/DitheringMode=0
 [DPY:DP-4]/DitheringDepth=0
-[DPY:DP-4]/DigitalVibrance=500
+[DPY:DP-4]/DigitalVibrance=450
 [DPY:DP-4]/ColorSpace=0
 [DPY:DP-4]/ColorRange=0
 [DPY:DP-4]/SynchronousPaletteUpdates=0
