@@ -3,9 +3,9 @@
 syntax on
 
 set autoindent
-set tabstop=3 softtabstop=3
-set shiftwidth=3
-set expandtab
+" set tabstop=4 softtabstop=4
+" set shiftwidth=4
+" set expandtab
 set smartindent
 set relativenumber
 set nohlsearch
@@ -62,6 +62,8 @@ Plug 'nvim-neo-tree/neo-tree.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'MunifTanjim/nui.nvim'
 " Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
+Plug 'mattn/emmet-vim'
+" Plug 'lukas-reineke/indent-blankline.nvim'
 
 call plug#end()
 
@@ -166,7 +168,7 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 let g:closetag_filetypes = 'html,xhtml,phtml'
 let g:closetag_xhtml_filetypes = 'xhtml,jsx,js,ts'
 " Disables auto-close if not in a "valid" region (based on filetype)
-"
+
 let g:closetag_regions = {
     \ 'typescript.tsx': 'jsxRegion,tsxRegion',
     \ 'javascript.jsx': 'jsxRegion',
@@ -198,3 +200,6 @@ nmap <silent> <A-l> :wincmd l<CR>
 
 " Save on F5
 nnoremap <F5> :w<CR>
+
+" enable CoC for scss
+autocmd FileType scss setl iskeyword+=@-@

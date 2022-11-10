@@ -305,7 +305,7 @@ def init_colors():
             ["#4c566a", "#4c566a"],  # 12
             ["#282c34", "#282c34"],  # 13
             ["#212121", "#212121"],  # 14
-            ["#e75480", "#e75480"],  # 15
+            ["#ecb365", "#ecb365"],  # 15
             ["#2aa899", "#2aa899"],  # 16
             ["#abb2bf", "#abb2bf"],  # color 17
             ["#81a1c1", "#81a1c1"],  # 18
@@ -342,18 +342,18 @@ def init_widgets_list():
         widget.Sep(
             linewidth=1,
             padding=10,
-            foreground=colors[15],
-            background=colors[15]
+            foreground=colors[13],
+            background=colors[13]
         ),              #
         widget.Image(
             filename="~/.config/qtile/icons/garuda-red.png",
             iconsize=9,
-            background=colors[15],
+            background=colors[13],
             mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('jgmenu_run')}
         ),
         widget.GroupBox(
 
-            **base(bg=colors[15]),
+#             **base(bg=colors[12]),
             font='UbuntuMono Nerd Font',
 
             fontsize=15,
@@ -387,13 +387,13 @@ def init_widgets_list():
             padding_y=0,
             margin_y=0,
             fontsize=14,
-            border=colors[7],
-            foreground=colors[9],
+            border=colors[2],
+            foreground=colors[5],
             margin=2,
             txt_floating='🗗',
             txt_minimized='>_ ',
             borderwidth=1,
-            background=colors[20],
+            background=colors[13],
             #unfocused_border = 'border'
         ),
 
@@ -401,7 +401,7 @@ def init_widgets_list():
             text='\uE0BC',
             font="droid sans mono for powerline",
             background=colors[14],
-            foreground=colors[20],
+            foreground=colors[13],
             padding=0,
             fontsize=25
         ),
@@ -455,7 +455,7 @@ def init_widgets_list():
         widget.TextBox(
             text='\uE0BC',
             font="droid sans mono for powerline",
-            background=colors[22],
+            background=colors[10],
             foreground=colors[3],
             padding=0,
             fontsize=25
@@ -467,7 +467,7 @@ def init_widgets_list():
             update_interval=1,
             fontsize=12,
             foreground=colors[5],
-            background=colors[22],
+            background=colors[10],
             mouse_callbacks={
                 'Button1': lambda: qtile.cmd_spawn(myTerm + ' -e htop')},
         ),
@@ -476,7 +476,7 @@ def init_widgets_list():
             text='\uE0BC',
             font="droid sans mono for powerline",
             background=colors[16],
-            foreground=colors[22],
+            foreground=colors[10],
             padding=0,
             fontsize=25
         ),
@@ -506,20 +506,20 @@ def init_widgets_list():
             foreground=colors[9],
             background=colors[23],
             fontsize=12,
-            format="%Y-%m-%d %H:%M"
+            format="%Y-%m-%d %H:%M  "
         ),
 
         widget.TextBox(
             text='\uE0BC',
             font="droid sans mono for powerline",
-            background=colors[10],
+            background=colors[18],
             foreground=colors[23],
             padding=0,
             fontsize=25
         ),
 
         widget.Systray(
-            background=colors[10],
+            background=colors[18],
             icon_size=20,
             padding=4
         ),

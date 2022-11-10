@@ -34,6 +34,12 @@ if test -d ~/Applications/depot_tools
     end
 end
 
+# Add flutter to PATH
+if test -d ~/.flutter/flutter/bin
+    if not contains -- ~/.flutter/flutter/bin $PATH
+        set -p PATH ~/.flutter/flutter/bin
+    end
+end
 
 ## Starship prompt
 if status --is-interactive
@@ -105,8 +111,8 @@ alias l.="exa -a | egrep '^\.'"                                     # show only 
 alias ip="ip -color"
 
 # Replace some more things with better alternatives
-alias cat='bat --style header --style rules --style snip --style changes --style header'
-[ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
+# alias cat='bat --style header --style rules --style snip --style changes --style header'
+# [ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
 
 # Common use
 alias grubup="sudo update-grub"
