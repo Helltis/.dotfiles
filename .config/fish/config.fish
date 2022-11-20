@@ -163,6 +163,7 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 # Personal aliases
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vim='nvim'
+alias portavm='ssh helltis@localhost -p12345'
 
 ## Run fastfetch if session is interactive
 if status --is-interactive && type -q fastfetch
