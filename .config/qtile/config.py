@@ -43,7 +43,7 @@ keys = [
     Key([mod], "v", lazy.spawn('pavucontrol')),
     Key([mod], "d", lazy.spawn('nwggrid -p -o 0.4')),
     Key([mod], "c", lazy.spawn('code')),
-    Key([mod], "s", lazy.spawn('flameshot full -p ' + home + '/Pictures')),
+    Key([mod], "s", lazy.spawn('flameshot gui -p ' + home + '/Pictures')),
     Key([mod], "Escape", lazy.spawn('xkill')),
     Key([mod], "Return", lazy.spawn(myTerm)),
     Key([mod], "KP_Enter", lazy.spawn('alacritty')),
@@ -341,7 +341,7 @@ def init_widgets_list():
 
         widget.Sep(
             linewidth=1,
-            padding=10,
+            padding=5,
             foreground=colors[13],
             background=colors[13]
         ),              #
@@ -351,6 +351,12 @@ def init_widgets_list():
             background=colors[13],
             mouse_callbacks={'Button1': lambda: qtile.cmd_spawn('jgmenu_run')}
         ),
+        widget.Sep(
+            linewidth=1,
+            padding=5,
+            foreground=colors[13],
+            background=colors[13]
+        ),              #
         widget.GroupBox(
 
 #             **base(bg=colors[12]),
@@ -424,6 +430,19 @@ def init_widgets_list():
             fontsize=25
         ),
 
+#         widget.Net(
+#                 background=colors[3]
+#                 format='{interface}: U {up} D {down} T {total}'
+#                 )
+# 
+#         widget.TextBox(
+#             text='\uE0BC',
+#             font="droid sans mono for powerline",
+#             background=colors[14],
+#             foreground=colors[13],
+#             padding=0,
+#             fontsize=25
+#         ),
         widget.CurrentLayoutIcon(
             custom_icon_paths=[os.path.expanduser("~/.config/qtile/icons")],
             foreground=colors[5],

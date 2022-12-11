@@ -12,5 +12,6 @@
     "graphql"
   ],
   "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
-  "snippets.userSnippetsDirectory": "~/.config/nvim/snippets"
+  "snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
+  "snippets.ultisnips.pythonPrompt": false
 }

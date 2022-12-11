@@ -2,7 +2,7 @@
 # /home/helltis/.nvidia-settings-rc
 #
 # Configuration file for nvidia-settings - the NVIDIA Settings utility
-# Generated on Thu Sep  1 15:33:43 2022
+# Generated on Sun Nov 27 21:01:35 2022
 #
 
 # ConfigProperties:
@@ -12,9 +12,9 @@ DisplayStatusBar = Yes
 SliderTextEntries = Yes
 IncludeDisplayNameInConfigFile = No
 UpdateRulesOnProfileNameChange = Yes
-Timer = Memory_Used_(GPU_0),Yes,3000
-Timer = Thermal_Monitor_(GPU_0),Yes,1000
 Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
+Timer = Thermal_Monitor_(GPU_0),Yes,1000
+Timer = Memory_Used_(GPU_0),Yes,3000
 
 # Attributes:
 
@@ -33,9 +33,19 @@ Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
 0/ShowGSYNCVisualIndicator=0
 0/ShowVRRVisualIndicator=0
 0/ShowGraphicsVisualIndicator=0
+[DPY:DP-0]/RedBrightness=0.000000
+[DPY:DP-0]/GreenBrightness=0.000000
+[DPY:DP-0]/BlueBrightness=0.000000
+[DPY:DP-0]/RedContrast=0.000000
+[DPY:DP-0]/GreenContrast=0.000000
+[DPY:DP-0]/BlueContrast=0.000000
+[DPY:DP-0]/RedGamma=1.000000
+[DPY:DP-0]/GreenGamma=1.000000
+[DPY:DP-0]/BlueGamma=1.000000
 [DPY:DP-0]/Dithering=0
 [DPY:DP-0]/DitheringMode=0
 [DPY:DP-0]/DitheringDepth=0
+[DPY:DP-0]/DigitalVibrance=0
 [DPY:DP-0]/ColorSpace=0
 [DPY:DP-0]/ColorRange=0
 [DPY:DP-0]/SynchronousPaletteUpdates=0
@@ -73,19 +83,10 @@ Timer = PowerMizer_Monitor_(GPU_0),Yes,1000
 [DPY:HDMI-0]/ColorSpace=0
 [DPY:HDMI-0]/ColorRange=0
 [DPY:HDMI-0]/SynchronousPaletteUpdates=0
-[DPY:DP-4]/RedBrightness=0.000000
-[DPY:DP-4]/GreenBrightness=0.000000
-[DPY:DP-4]/BlueBrightness=0.000000
-[DPY:DP-4]/RedContrast=0.000000
-[DPY:DP-4]/GreenContrast=0.000000
-[DPY:DP-4]/BlueContrast=0.000000
-[DPY:DP-4]/RedGamma=1.010000
-[DPY:DP-4]/GreenGamma=1.010000
-[DPY:DP-4]/BlueGamma=1.010000
 [DPY:DP-4]/Dithering=0
 [DPY:DP-4]/DitheringMode=0
 [DPY:DP-4]/DitheringDepth=0
-[DPY:DP-4]/DigitalVibrance=450
 [DPY:DP-4]/ColorSpace=0
 [DPY:DP-4]/ColorRange=0
 [DPY:DP-4]/SynchronousPaletteUpdates=0
+[GPU:0]/GPUPowerMizerMode=2
